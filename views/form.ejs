@@ -1,0 +1,22 @@
+<form action="/new" method="post">
+    <% if(locals.error !==undefined){ %>
+        <p class="message">
+            <%= error %>
+        </p>
+        <% } %>
+
+            <fieldset>
+                <legend><span></span> Verplichte waardes</legend>
+
+                <label for="author">author:</label>
+                <input required type="text" name="author" id="author" placeholder="..." />
+
+                <label for="text">text:</label>
+                <input required type="text" name="text" id="text" placeholder="..." />
+
+                <label for="methodId"></label>
+                <input type="hidden" name="methodId" id="methodId" placeholder="..." value="clbm2lst10kxy0aw1lnu15898" />
+
+                <input type="submit" value="Opslaan" />
+            </fieldset>
+</form>

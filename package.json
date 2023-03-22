@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.21"
+  },
+  "name": "the-web-is-for-everyone-interactive-functionality",
+  "description": "> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kosterm14/the-web-is-for-everyone-interactive-functionality.git"
+  },
+  "author": "marco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kosterm14/the-web-is-for-everyone-interactive-functionality/issues"
+  },
+  "homepage": "https://github.com/kosterm14/the-web-is-for-everyone-interactive-functionality#readme"
+}
