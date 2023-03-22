@@ -336,20 +336,21 @@ fieldset {
 .hexagons {
     display: flex;
     justify-content: space-between;
+    padding: 1rem;
 }
 
 .hexUp,
 .hexDown {
-    width: calc(300px/3);
-    height: calc(275px/3);
+    width: calc(300px/3.5);
+    height: calc(275px/3.5);
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    transform: rotate(90deg);
+    /* transform: rotate(90deg); */
     background: var(--yellow);
 }
 
 @keyframes big {
     0% {
-        transform: scale(1, 1);
+        transform: scale(1, 1)
     }
 
     50% {
@@ -361,13 +362,13 @@ fieldset {
     }
 
     100% {
-        transform: scale(1, 1);
+        transform: scale(1, 1)
     }
 }
 
 @keyframes small {
     0% {
-        transform: scale(1, 1);
+        transform: scale(1, 1)
     }
 
     50% {
@@ -379,7 +380,7 @@ fieldset {
     }
 
     100% {
-        transform: scale(1, 1);
+        transform: scale(1, 1)
     }
 }
 
@@ -392,6 +393,10 @@ fieldset {
     animation-iteration-count: 100;
 }
 
+.hexUp:hover {
+    background-color: var(--orange);
+}
+
 .hexDown {
     margin-top: 1rem;
 
@@ -399,4 +404,26 @@ fieldset {
     animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
     animation-duration: 5s;
     animation-iteration-count: 100;
+}
+
+.hexDown:hover {
+    background-color: var(--orange);
+}
+
+.hexUp:active, .hexDown:active {
+    animation-name: click;
+    animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+
+@keyframes click {
+    0% {
+        transform: rotate(0deg);
+    }
+
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
