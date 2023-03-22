@@ -1,22 +1,61 @@
-<form action="/new" method="post">
-    <% if(locals.error !==undefined){ %>
-        <p class="message">
-            <%= error %>
-        </p>
-        <% } %>
+<%- include('./partials/head') %>
 
-            <fieldset>
-                <legend><span></span> Verplichte waardes</legend>
+    <nav>
+        <ul>
+            <a href="/">
+                <li>
+                    <h2>Template</h2>
+                </li>
+            </a>
+            <a href="/beschrijving">
+                <li>
+                    <h2>Beschrijving</h2>
+                </li>
+            </a>
+            </a>
+            <a href="/stappenplan">
+                <li>
+                    <h2>Stappenplan</h2>
+                </li>
+            </a>
+            </a>
+            <a href="/voorbeelden">
+                <li>
+                    <h2>Voorbeelden</h2>
+                </li>
+            </a>
+            <li>
+                <h2 class="bold">Feedback</h2>
+            </li>
+        </ul>
+    </nav>
+    </main>
 
-                <label for="author">author:</label>
-                <input required type="text" name="author" id="author" placeholder="..." />
+    <section class="form">
+        <form action="/form" method="post">
+            <% if(locals.error !==undefined){ %>
+                <p class="message">
+                    <%= error %>
+                </p>
+                <% } %>
 
-                <label for="text">text:</label>
-                <input required type="text" name="text" id="text" placeholder="..." />
+                    <fieldset>
+                        <legend><span></span>Comments hier pls:)</legend>
 
-                <label for="methodId"></label>
-                <input type="hidden" name="methodId" id="methodId" placeholder="..." value="clbm2lst10kxy0aw1lnu15898" />
+                        <label for="author">Naam</label>
+                        <input required type="text" name="author" id="author" placeholder="..." />
 
-                <input type="submit" value="Opslaan" />
-            </fieldset>
-</form>
+                        <label for="text">Jouw comment</label>
+                        <input required type="text" name="text" id="text" placeholder="..." />
+
+                        <label for="methodId"></label>
+                        <input type="hidden" name="methodId" id="methodId" placeholder="..."
+                            value="clbm2lst10kxy0aw1lnu15898" />
+
+                        <input class="submit-button" type="submit" value="Verzend" />
+                    </fieldset>
+        </form>
+    </section>
+    </body>
+
+    <%- include('./partials/foot') %>

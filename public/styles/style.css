@@ -1,0 +1,402 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 20px;
+
+    --rigid: rigid-square, sans-serif;
+    --yrsa: "yrsa", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+
+    --blue: #090940;
+    --bluelight: #31439c;
+    --yellow: #feb51e;
+    --orange: #fe6f07;
+    --white: #ffffff;
+}
+
+h1 {
+    font-size: 3.157rem;
+    font-weight: 800;
+
+    font-family: var(--rigid);
+    color: var(--blue);
+
+    padding-left: 6.7rem;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.logo {
+    padding: 1rem;
+    padding-left: 3rem;
+    padding-bottom: 0.75rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navmain ul,
+.navheader ul {
+    display: flex;
+    align-items: center;
+
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--blue);
+}
+
+.navmain li,
+.navheader li {
+    padding: 0.6rem;
+    font-size: 1rem;
+
+    font-family: var(--rigid);
+    font-weight: bolder;
+}
+
+.navheader li {
+    padding: 1.4rem;
+}
+
+.navheader {
+    display: flex;
+    align-items: center;
+    padding-right: 3rem;
+}
+
+.arrows {
+    width: 1%;
+}
+
+.line {
+    background-color: var(--bluelight);
+    color: var(--white);
+
+    text-transform: uppercase;
+    font-family: var(--rigid);
+    font-size: 0.75rem;
+
+    padding-left: 7rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+.navmain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 0.5rem;
+}
+
+.navmain li {
+    color: var(--bluelight);
+    text-transform: uppercase;
+    font-family: var(--rigid);
+}
+
+.bold {
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-thickness: 0.2rem;
+    text-underline-offset: 0.5rem;
+}
+
+.navmain ul {
+    padding-right: 3.2rem;
+}
+
+.template-url {
+    width: 39.8rem;
+    height: 27rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.tags-b {
+    display: flex;
+    justify-content: left;
+
+    margin-left: 7rem;
+}
+
+.tags-s {
+    margin-top: 2.5rem;
+}
+
+.tag {
+    background-color: var(--yellow);
+    color: var(--blue);
+    font-family: var(--rigid);
+    font-size: 0.8rem;
+    font-weight: bolder;
+
+    padding: 0.3rem;
+    margin-left: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.tag-hollow {
+    background-color: var(--yellow);
+    color: var(--blue);
+    font-family: var(--rigid);
+    font-size: 0.8rem;
+    font-weight: bolder;
+
+    padding: 0.3rem;
+    margin-left: 0.8rem;
+    margin-bottom: 0.8rem;
+
+    opacity: 50%;
+}
+
+.full-b {
+    flex-direction: column;
+
+    margin-top: 2.5rem;
+}
+
+.full-s {
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 28.5rem;
+}
+
+.full-b,
+.full-s {
+    display: flex;
+}
+
+.icon {
+    width: 2%;
+    height: 2%;
+}
+
+.text {
+    margin-left: -27.5rem;
+    margin-top: 0.75rem;
+
+    max-width: 35rem;
+
+    font-size: 0.9rem;
+    font-family: var(--yrsa);
+    color: var(--bluelight);
+}
+
+.description {
+    margin-left: -29.5rem;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    font-family: var(--yrsa);
+    color: var(--bluelight);
+
+    line-height: 1.5rem;
+}
+
+.description p {
+    margin-left: -2rem;
+    max-width: 30rem;
+}
+
+.steps {
+    width: 40%;
+    height: 40%;
+}
+
+.columntag {
+    margin-left: -31.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel {
+    position: relative;
+    height: 27.5rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.carousel-img-blur {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(0.2rem);
+    position: absolute;
+}
+
+.carousel-img {
+    z-index: 1;
+}
+
+.carousel-container {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 250ms ease-in;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-button-left,
+.carousel-button-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--orange);
+    border: 0;
+    cursor: pointer;
+    z-index: 1;
+    padding: 0.5rem;
+}
+
+.carousel-button-right {
+    right: 0%;
+}
+
+form {
+    padding: 3rem 1rem;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+}
+
+label,
+input {
+    width: -webkit-fill-available;
+}
+
+label {
+    font-size: 1rem;
+    font-family: var(--yrsa);
+    margin-bottom: 0.5rem;
+}
+
+legend {
+    color: var(--bluelight);
+    text-transform: uppercase;
+    font-family: var(--rigid);
+    margin-bottom: 0.5rem;
+}
+
+input {
+    font-size: 1.5em;
+    background-color: #e8e8e8;
+    border: 0.05rem solid #fafafa;
+    margin-bottom: 1rem;
+}
+
+.submit-button {
+    background-color: var(--bluelight);
+    color: var(--white);
+    font-family: var(--rigid);
+}
+
+fieldset {
+    border-style: none;
+}
+
+.hexagons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hexUp,
+.hexDown {
+    width: calc(300px/3);
+    height: calc(275px/3);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    transform: rotate(90deg);
+    background: var(--yellow);
+}
+
+@keyframes big {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(0.75, 0.75)
+    }
+
+    75% {
+        transform: scale(1.25, 1.25)
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes small {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.25, 1.25)
+    }
+
+    75% {
+        transform: scale(0.75, 0.75)
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.hexUp {
+    margin-bottom: 1rem;
+
+    animation-name: big;
+    animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+    animation-duration: 5s;
+    animation-iteration-count: 100;
+}
+
+.hexDown {
+    margin-top: 1rem;
+
+    animation-name: small;
+    animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+    animation-duration: 5s;
+    animation-iteration-count: 100;
+}

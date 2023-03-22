@@ -1,0 +1,117 @@
+<%- include('./partials/head') %>
+
+    <nav>
+        <ul>
+            <a href="/">
+                <li>
+                    <h2>Template</h2>
+                </li>
+            </a>
+            <a href="/beschrijving">
+                <li>
+                    <h2>Beschrijving</h2>
+                </li>
+            </a>
+            </a>
+            <a href="/stappenplan">
+                <li>
+                    <h2>Stappenplan</h2>
+                </li>
+            </a>
+            </a>
+            <li>
+                <h2 class="bold">Voorbeelden</h2>
+            </li>
+            <a href="/form">
+                <li>
+                    <h2>Feedback</h2>
+                </li>
+            </a>
+        </ul>
+    </nav>
+    </section>
+
+    <section class="carousel">
+        <button class="carousel-button-left">
+            <img src="assets/buttonL.png" alt="">
+        </button>
+        <section class="carousel-container">
+            <ul class="carousel-list">
+                <li class="carousel-slide current-slide">
+                    <% methods.forEach(method=> { %>
+                        <% method.examples.forEach(example=> { %>
+                            <% if (example.url=="https://media.graphassets.com/TOq69F2T1SWMxDTcB6HA" ) {%>
+                                <img class="carousel-img-blur" src="<%- example.url %>" alt="">
+                                <img class="carousel-img" src="<%- example.url %>" alt="">
+                                <% } %>
+                                    <% }) %>
+                                        <% }) %>
+                </li>
+                <li class="carousel-slide">
+                    <% methods.forEach(method=> { %>
+                        <% method.examples.forEach(example=> { %>
+                            <% if (example.url=="https://media.graphassets.com/HiNE0gaURxalEPp66ln6" ) {%>
+                                <img class="carousel-img-blur" src="<%- example.url %>" alt="">
+                                <img class="carousel-img" src="<%- example.url %>" alt="">
+                                <% } %>
+                                    <% }) %>
+                                        <% }) %>
+                </li>
+                <li class="carousel-slide current-slide">
+                    <% methods.forEach(method=> { %>
+                        <% method.examples.forEach(example=> { %>
+                            <% if (example.url=="https://media.graphassets.com/hHM5iTKgQgCAVvdaLqkm" ) {%>
+                                <img class="carousel-img-blur" src="<%- example.url %>" alt="">
+                                <img class="carousel-img" src="<%- example.url %>" alt="">
+                                <% } %>
+                                    <% }) %>
+                                        <% }) %>
+                </li>
+                <li class="carousel-slide">
+                    <% methods.forEach(method=> { %>
+                        <% method.examples.forEach(example=> { %>
+                            <% if (example.url=="https://media.graphassets.com/otOarr3bRAywTubLly8N" ) {%>
+                                <img class="carousel-img-blur" src="<%- example.url %>" alt="">
+                                <img class="carousel-img" src="<%- example.url %>" alt="">
+                                <% } %>
+                                    <% }) %>
+                                        <% }) %>
+                </li>
+                <li class="carousel-slide">
+                    <% methods.forEach(method=> { %>
+                        <% method.examples.forEach(example=> { %>
+                            <% if (example.url=="https://media.graphassets.com/0AOHqXFlSEuIM4rvwAis" ) {%>
+                                <img class="carousel-img-blur" src="<%- example.url %>" alt="">
+                                <img class="carousel-img" src="<%- example.url %>" alt="">
+                                <% } %>
+                                    <% }) %>
+                                        <% }) %>
+                </li>
+                <li class="carousel-slide current-slide">
+                    <% methods.forEach(method=> { %>
+                        <% method.examples.forEach(example=> { %>
+                            <% if (example.url=="https://media.graphassets.com/JzUUiPLZQji0EbcovDjE" ) {%>
+                                <img class="carousel-img-blur" src="<%- example.url %>" alt="">
+                                <img class="carousel-img" src="<%- example.url %>" alt="">
+                                <% } %>
+                                    <% }) %>
+                                        <% }) %>
+                </li>
+                <li class="carousel-slide">
+                    <% methods.forEach(method=> { %>
+                        <% method.examples.forEach(example=> { %>
+                            <% if (example.url=="https://media.graphassets.com/ovj7xTRGR2WZEm9m3Jwt" ) {%>
+                                <img class="carousel-img-blur" src="<%- example.url %>" alt="">
+                                <img class="carousel-img" src="<%- example.url %>" alt="">
+                                <% } %>
+                                    <% }) %>
+                                        <% }) %>
+                </li>
+            </ul>
+        </section>
+        <button class="carousel-button-right">
+            <img src="assets/buttonR.png" alt="">
+        </button>
+    </section>
+    </main>
+    </body>

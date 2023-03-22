@@ -1,5 +1,8 @@
 import express from 'express'
 
+const url = "https://api.visualthinking.fdnd.nl/api/v1/methods?first=1000"
+const data = await fetch(url).then((response) => response.json())
+
 // Maak een nieuwe express app
 const server = express()
 
@@ -14,38 +17,70 @@ server.set('views', './views')
 server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
 
-// Maak een route voor de index
 server.get('/', (request, response) => {
+    response.render('index', data)
+})
+
+server.get('/beschrijving', (request, response) => {
+    response.render('beschrijving', data)
+})
+
+server.get('/stappenplan', (request, response) => {
+    response.render('stappenplan', data)
+})
+
+server.get('/stappenplan2', (request, response) => {
+    response.render('stappenplan2', data)
+})
+
+server.get('/stappenplan3', (request, response) => {
+    response.render('stappenplan3', data)
+})
+
+server.get('/stappenplan4', (request, response) => {
+    response.render('stappenplan4', data)
+})
+
+server.get('/voorbeelden', (request, response) => {
+    response.render('voorbeelden', data)
+})
+
+server.get('/form', (request, response) => {
+    response.render('form', data)
+})
+
+// Maak een route voor de index
+server.get('/form', (request, response) => {
     const baseurl = "https://api.visualthinking.fdnd.nl/api/v1/"
     const slug = request.query.comment
     const url = `${baseurl}comment/${slug}`
 
-    console.log(url)
+    // console.log(url)
 
     fetchJson(url).then((data) => {
-        response.render('index', data)
+        response.render('form', data)
     })
 })
 
-server.get('/new', (request, response) => {
-    response.render('form')
-})
+// server.get('/new', (request, response) => {
+//     response.render('form')
+// })
 
-server.post('/new', (request, response) => {
+server.post('/form', (request, response) => {
     // console.log(request.body)
 
     const baseurl = "https://api.visualthinking.fdnd.nl/api/v1/"
 
     const url = `${baseurl}comments`
-    console.log(url)
+    // console.log(url)
 
     postJson(url, request.body).then((data) => {
         let newComment = { ...request.body }
 
-        console.log(data)
+        // console.log(data)
 
         if (data.success) {
-            response.redirect('/new/?memberPosted=true')
+            response.redirect('/?memberPosted=true')
             // TODO: squad meegeven, message meegeven
             // TODO: Toast meegeven aan de homepagina
         } else {
