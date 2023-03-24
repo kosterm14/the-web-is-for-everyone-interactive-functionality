@@ -1,4 +1,4 @@
-<%- include('./partials/head') %>
+<%- include('./partials/head2') %>
 
     <nav>
         <ul>
@@ -32,6 +32,22 @@
     </main>
 
     <section class="form">
+        <section class="comment">
+            <h2>Comment section</h2>
+            <% comments.forEach(comment=> { %>
+                <ul>
+                    <li>
+                        <h3>
+                            <b>
+                                <%= comment.author %>
+                            </b>
+                            <%= comment.text %>
+                        </h3>
+                    </li>
+                </ul>
+                <% }) %>
+        </section>
+
         <form action="/form" method="post">
             <% if(locals.error !==undefined){ %>
                 <p class="message">

@@ -33,6 +33,26 @@ h2 {
     font-weight: 400;
 }
 
+.comment {
+    padding: 0.6rem;
+
+    font-family: var(--rigid);
+
+    width: fit-content;
+    height: fit-content;
+}
+
+.comment h2 {
+    text-transform: uppercase;
+    font-family: var(--rigid);
+    color: var(--bluelight);
+}
+
+.comment h3 {
+    background-color: #e8e8e8;
+    border: 0.05rem solid #fafafa;
+}
+
 h3 {
     font-size: 1rem;
     font-weight: 400;
@@ -291,11 +311,14 @@ a {
 
 form {
     padding: 3rem 1rem;
+
+    width: 40%;
 }
 
 .form {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 label,
@@ -410,7 +433,8 @@ fieldset {
     background-color: var(--orange);
 }
 
-.hexUp:active, .hexDown:active {
+.hexUp:active,
+.hexDown:active {
     animation-name: click;
     animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
     animation-duration: 2s;

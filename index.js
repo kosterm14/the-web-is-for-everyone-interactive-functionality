@@ -3,6 +3,9 @@ import express from 'express'
 const url = "https://api.visualthinking.fdnd.nl/api/v1/methods?first=1000"
 const data = await fetch(url).then((response) => response.json())
 
+const url2 = "https://api.visualthinking.fdnd.nl/api/v1/comments?id=clbm2lst10kxy0aw1lnu15898"
+const data2 = await fetch(url2).then((response2) => response2.json())
+
 // Maak een nieuwe express app
 const server = express()
 
@@ -46,8 +49,12 @@ server.get('/voorbeelden', (request, response) => {
 })
 
 server.get('/form', (request, response) => {
-    response.render('form', data)
+    response.render('form', data2)
 })
+
+// server.get('/form', (request, response2) => {
+//     response2.render('form', data2)
+// })
 
 // Maak een route voor de index
 server.get('/form', (request, response) => {
@@ -70,7 +77,6 @@ server.post('/form', (request, response) => {
     // console.log(request.body)
 
     const baseurl = "https://api.visualthinking.fdnd.nl/api/v1/"
-
     const url = `${baseurl}comments`
     // console.log(url)
 
