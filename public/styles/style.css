@@ -208,8 +208,8 @@ a {
 }
 
 .icon {
-    width: 2%;
-    height: 2%;
+    width: 2.5%;
+    height: 2.5%;
 }
 
 .text {
@@ -367,7 +367,6 @@ fieldset {
     width: calc(300px/3.5);
     height: calc(275px/3.5);
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    /* transform: rotate(90deg); */
     background: var(--yellow);
 }
 
@@ -454,4 +453,136 @@ fieldset {
 
 ul {
     list-style: none;
+}
+
+/* Mobile */
+@media only screen and (max-width: 38.4rem) {
+
+    /* header */
+    .logo {
+        padding-left: 1rem;
+    }
+
+    .navheader {
+        padding-right: 0rem;
+    }
+
+    h1 {
+        padding-left: 1rem;
+    }
+
+    .line {
+        padding-left: 1.5rem;
+    }
+
+    .arrows {
+        width: 3%;
+    }
+
+    .navmain {
+        flex-wrap: wrap;
+    }
+
+    .navmain ul {
+        flex-wrap: wrap;
+        padding-right: 0rem;
+        padding-left: 0.5rem;
+    }
+
+    /* feedback */
+    .form {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .hexUp,
+    .hexDown {
+        width: calc(300px/8);
+        height: calc(275px/8);
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        background: var(--yellow);
+    }
+
+    /* template */
+    .template-url {
+        width: calc(39.8rem/2);
+        height: calc(27rem/2);
+        margin-top: 4rem;
+    }
+
+    /* beschrijving */
+
+    .tags-b {
+        margin-left: 1rem;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .icon {
+        width: 8%;
+        height: 8%;
+
+        margin-bottom: 0.8rem;
+    }
+
+    .text {
+        margin-left: 0rem;
+        margin-bottom: 3rem;
+        max-width: 17rem;
+        font-size: 1rem;
+    }
+
+    /* stappenplan */
+
+    .columntag {
+        margin-left: 0rem;
+        flex-wrap: wrap;
+    }
+
+    .tags-s {
+        margin-top: 1rem;
+    }
+
+    .full-s {
+        flex-direction: column;
+        margin-left: 0rem;
+    }
+
+    .description {
+        margin-left: 0rem;
+    }
+
+    .description p {
+        margin-left: 1rem;
+        max-width: 17rem;
+    }
+
+    .description ul {
+        margin-left: 2rem;
+        max-width: 17rem;
+    }
+
+    .steps {
+        width: 75%;
+        margin-top: 1rem;
+    }
+
+    /* voorbeelden */
+
+    .carousel {
+        margin-top: 4rem;
+    }
+
+    .carousel-container {
+        height: 50%;
+    }
+
+    .carousel-button-left,
+    .carousel-button-right {
+        top: 25%;
+    }
 }
