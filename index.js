@@ -1,7 +1,7 @@
 import express from 'express'
 
-const url = "https://api.visualthinking.fdnd.nl/api/v1/methods?first=1000"
-const data = await fetch(url).then((response) => response.json())
+const url = "https://api.visualthinking.fdnd.nl/api/v1/"
+// const data = await fetch(url).then((response) => response.json())
 
 // Maak een nieuwe express app
 const server = express()
@@ -17,39 +17,58 @@ server.set('views', './views')
 server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
 
-server.get('/', (request, response) => {
-    response.render('index', data)
+server.get("/", (request, response) => {
+    let methodsUrl = url + "methods?first=1000";
+
+    fetchJson(methodsUrl).then((data) => {
+        response.render("index", data);
+    });
+});
+
+server.get("/method/:slug/template", (request, response) => {
+    let detailPageUrl = url + "method/" + request.params.slug;
+
+    fetchJson(detailPageUrl).then((data) => {
+        response.render("template", data);
+    });
+});
+
+server.get('/method/:slug/beschrijving', (request, response) => {
+    let detailPageUrl = url + "method/" + request.params.slug;
+
+    fetchJson(detailPageUrl).then((data) => {
+        response.render("beschrijving", data);
+    });
 })
 
-server.get('/beschrijving', (request, response) => {
-    response.render('beschrijving', data)
-})
+server.get("/method/:slug/stappenplan", (request, response) => {
+    let detailPageUrl = url + "method/" + request.params.slug;
 
-server.get('/stappenplan', (request, response) => {
-    response.render('stappenplan', data)
-})
+    fetchJson(detailPageUrl).then((data) => {
+        response.render("stappenplan", data);
+    });
+});
 
-server.get('/stappenplan2', (request, response) => {
-    response.render('stappenplan2', data)
-})
+server.get("/method/:slug/voorbeelden", (request, response) => {
+    let detailPageUrl = url + "method/" + request.params.slug;
 
-server.get('/stappenplan3', (request, response) => {
-    response.render('stappenplan3', data)
-})
-
-server.get('/stappenplan4', (request, response) => {
-    response.render('stappenplan4', data)
-})
-
-server.get('/voorbeelden', (request, response) => {
-    response.render('voorbeelden', data)
-})
+    fetchJson(detailPageUrl).then((data) => {
+        response.render("voorbeelden", data);
+    });
+});
 
 // Maak een route voor de index
-server.get('/form', (request, response) => {
+server.get('/method/:slug/form', (request, response) => {
     const url = "https://api.visualthinking.fdnd.nl/api/v1/comments?id=clbm2lst10kxy0aw1lnu15898&first=1000"
+    const url2 = "https://api.visualthinking.fdnd.nl/api/v1/"
 
-    fetchJson(url).then((data) => {
+    let detailPageUrl = url2 + "method/" + request.params.slug;
+
+    // fetchJson(url).then((data) => {
+    //     response.render('form', data)
+    // })
+
+    fetchJson(detailPageUrl).then((data) => {
         response.render('form', data)
     })
 })
@@ -112,3 +131,20 @@ export async function postJson(url, body) {
         .then((response) => response.json())
         .catch((error) => error)
 }
+
+/* <section class="form">
+        <section class="comment">
+            <h2>Comment section</h2>
+            <% comments.forEach(comment=> { %>
+                <ul>
+                    <li>
+                        <h3>
+                            <b>
+                                <%= comment.author %>
+                            </b>
+                            <%= comment.text %>
+                        </h3>
+                    </li>
+                </ul>
+                <% }) %>
+        </section> */

@@ -2,12 +2,12 @@
 
     <nav>
         <ul>
-            <a href="/">
+            <a href="/method/<%= method.slug %>/template">
                 <li>
                     <h2>Template</h2>
                 </li>
             </a>
-            <a href="/beschrijving">
+            <a href="/method/<%= method.slug %>/beschrijving">
                 <li>
                     <h2>Beschrijving</h2>
                 </li>
@@ -17,12 +17,12 @@
                 <h2 class="bold">Stappenplan</h2>
             </li>
             </a>
-            <a href="/voorbeelden">
+            <a href="/method/<%= method.slug %>/voorbeelden">
                 <li>
                     <h2>Voorbeelden</h2>
                 </li>
             </a>
-            <a href="/form">
+            <a href="/method/<%= method.slug %>/form">
                 <li>
                     <h2>Feedback</h2>
                 </li>
@@ -31,62 +31,20 @@
     </nav>
     </section>
 
-    <section class="columntag">
-        <section class="tags-s">
-            <% methods.forEach(method=> { %>
-                <% method.steps.forEach(step=> { %>
-                    <% if (step.title=="Stap 1 - Uitgangspunten definiëren" ) {%>
-                        <h2 class="tag">
-                            <%= step.title %>
-                        </h2>
-                        <% } %>
-                            <% }) %>
-                                <% }) %>
-        </section>
-
-        <section class="tags-s">
-            <% methods.forEach(method=> { %>
-                <% method.steps.forEach(step=> { %>
-                    <% if (step.title=="Stap 2 - Structureren" && method.slug=="roadmap" ) {%>
-                        <a href="/stappenplan2">
-                            <h2 class="tag-hollow">
-                                <%= step.title %>
-                            </h2>
-                        </a>
-                        <% } %>
-                            <% }) %>
-                                <% }) %>
-        </section>
-
-        <section class="tags-s">
-            <% methods.forEach(method=> { %>
-                <% method.steps.forEach(step=> { %>
-                    <% if (step.title=="Stap 3 - Uitwerken" ) {%>
-                        <a href="/stappenplan3">
-                            <h2 class="tag-hollow">
-                                <%= step.title %>
-                            </h2>
-                        </a>
-                        <% } %>
-                            <% }) %>
-                                <% }) %>
-        </section>
-    </section>
-
     <section class="full-s">
         <section>
-            <% methods.forEach(method=> { %>
-                <% method.steps.forEach(step=> { %>
-                    <% if (step.title=="Stap 1 - Uitgangspunten definiëren" ) {%>
-                        <h3 class="description">
-                            <%- step.description.html %>
-                        </h3>
-                        <% } %>
-                            <% }) %>
-                                <% }) %>
-        </section>
+            <% method.steps.forEach(step=> { %>
+                <h2 class="tag">
+                    <%= step?.title %>
+                </h2>
 
-        <img class="steps" src="assets/stap1.png" alt="">
+                <h3 class="description">
+                    <%- step.description?.html %>
+                </h3>
+
+                <img src="<%- step.visual %>" alt="">
+                <% }) %>
+        </section>
 
     </section>
     </main>

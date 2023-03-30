@@ -2,7 +2,7 @@
 
     <nav>
         <ul>
-            <a href="/">
+            <a href="/method/<%= method.slug %>/template">
                 <li>
                     <h2>Template</h2>
                 </li>
@@ -11,17 +11,17 @@
                 <h2 class="bold">Beschrijving</h2>
             </li>
             </a>
-            <a href="/stappenplan">
+            <a href="/method/<%= method.slug %>/stappenplan">
                 <li>
                     <h2>Stappenplan</h2>
                 </li>
             </a>
-            <a href="/voorbeelden">
+            <a href="/method/<%= method.slug %>/voorbeelden">
                 <li>
                     <h2>Voorbeelden</h2>
                 </li>
             </a>
-            <a href="/form">
+            <a href="/method/<%= method.slug %>/form">
                 <li>
                     <h2>Feedback</h2>
                 </li>
@@ -32,58 +32,40 @@
 
     <section class="full-b">
         <section class="tags-b">
-            <img class="icon" src="assets/icon1.png" alt="">
-            <% methods.forEach(method=> { %>
-                <% method.categories.forEach(category=> { %>
-                    <% if (method.slug=="roadmap" ) {%>
-                        <h2 class="tag">
-                            <%= category.title %>
-                        </h2>
-                        <% } %>
-                            <% }) %>
-                                <% }) %>
+            <img class="icon" src="/assets/icon1.png" alt="">
+            <% method.categories.forEach(category=> { %>
+                <h2 class="tag">
+                    <%= category?.title %>
+                </h2>
+                <% }) %>
         </section>
 
         <section class="tags-b">
-            <img class="icon" src="assets/icon2.png" alt="">
-            <% methods.forEach(method=> { %>
-                <% method.material.forEach(material=> { %>
-                    <% if (method.slug=="roadmap" ) {%>
-                        <h2 class="tag">
-                            <%= material %>
-                        </h2>
-                        <% } %>
-                            <% }) %>
-                                <% }) %>
-        </section>
-
-        <section class="tags-b">
-            <img class="icon" src="assets/icon3.png" alt="">
-            <% methods.forEach(method=> { %>
-                <% if (method.slug=="roadmap" ) {%>
-                    <h2 class="tag">
-                        <%= method.duration %>
-                    </h2>
-                    <% } %>
-                        <% }) %>
-        </section>
-
-        <section class="tags-b">
-            <img class="icon" src="assets/icon4.png" alt="">
+            <img class="icon" src="/assets/icon2.png" alt="">
             <h2 class="tag">
-                Motorola
+                <%= method.material %>
+            </h2>
+        </section>
+
+        <section class="tags-b">
+            <img class="icon" src="/assets/icon3.png" alt="">
+            <h2 class="tag">
+                <%= method.duration %>
+            </h2>
+        </section>
+
+        <section class="tags-b">
+            <img class="icon" src="/assets/icon4.png" alt="">
+            <h2 class="tag">
+                Marco:)
             </h2>
         </section>
     </section>
 
     <section class="flex">
-        <% methods.forEach(method=> { %>
-            <% if (method.slug=="roadmap" ) {%>
-                <h3 class="text">
-                    <%- method.description.html %>
-                </h3>
-                <% } %>
-                    <% }) %>
+        <h3 class="text">
+            <%- method.description.html %>
+        </h3>
     </section>
     </main>
     </body>

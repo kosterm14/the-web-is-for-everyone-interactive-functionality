@@ -1,0 +1,36 @@
+<%- include('./partials/head') %>
+
+    <nav>
+        <ul>
+            <li>
+                <h2 class="bold">Template</h2>
+            </li>
+            <a href="/method/<%= method.slug %>/beschrijving">
+                <li>
+                    <h2>Beschrijving</h2>
+                </li>
+            </a>
+            <a href="/method/<%= method.slug %>/stappenplan">
+                <li>
+                    <h2>Stappenplan</h2>
+                </li>
+            </a>
+            <a href="/method/<%= method.slug %>/voorbeelden">
+                <li>
+                    <h2>Voorbeelden</h2>
+                </li>
+            </a>
+            <a href="/method/<%= method.slug %>/form">
+                <li>
+                    <h2>Feedback</h2>
+                </li>
+            </a>
+        </ul>
+    </nav>
+    </section>
+
+    <section class="flex">
+        <img class="template-url" src="<%= method.template.url %>" alt="">
+    </section>
+    </main>
+    </body>

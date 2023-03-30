@@ -1,25 +1,25 @@
-<%- include('./partials/head2') %>
+<%- include('./partials/head') %>
 
     <nav>
         <ul>
-            <a href="/">
+            <a href="/method/<%= method.slug %>/template">
                 <li>
                     <h2>Template</h2>
                 </li>
             </a>
-            <a href="/beschrijving">
+            <a href="/method/<%= method.slug %>/beschrijving">
                 <li>
                     <h2>Beschrijving</h2>
                 </li>
             </a>
             </a>
-            <a href="/stappenplan">
+            <a href="/method/<%= method.slug %>/stappenplan">
                 <li>
                     <h2>Stappenplan</h2>
                 </li>
             </a>
             </a>
-            <a href="/voorbeelden">
+            <a href="/method/<%= method.slug %>/voorbeelden">
                 <li>
                     <h2>Voorbeelden</h2>
                 </li>
@@ -30,23 +30,6 @@
         </ul>
     </nav>
     </main>
-
-    <section class="form">
-        <section class="comment">
-            <h2>Comment section</h2>
-            <% comments.forEach(comment=> { %>
-                <ul>
-                    <li>
-                        <h3>
-                            <b>
-                                <%= comment.author %>
-                            </b>
-                            <%= comment.text %>
-                        </h3>
-                    </li>
-                </ul>
-                <% }) %>
-        </section>
 
         <form action="/form" method="post">
             <% if(locals.error !==undefined){ %>
@@ -65,7 +48,7 @@
                         <input required type="text" name="text" id="text" placeholder="..." />
 
                         <label for="methodId"></label>
-                        <input type="hidden" name="methodId" id="methodId" value="clbm2lst10kxy0aw1lnu15898" />
+                        <input type="hidden" name="methodId" id="methodId" value="<%= method.id %>" />
 
                         <input class="submit-button" type="submit" value="Verzend" />
                     </fieldset>
