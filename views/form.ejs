@@ -1,25 +1,25 @@
-<%- include('./partials/head') %>
+<%- include('./partials/headForm') %>
 
     <nav>
         <ul>
-            <a href="/method/<%= method.slug %>/template">
+            <a href="/method/<%= detail.method.slug %>/template">
                 <li>
                     <h2>Template</h2>
                 </li>
             </a>
-            <a href="/method/<%= method.slug %>/beschrijving">
+            <a href="/method/<%= detail.method.slug %>/beschrijving">
                 <li>
                     <h2>Beschrijving</h2>
                 </li>
             </a>
             </a>
-            <a href="/method/<%= method.slug %>/stappenplan">
+            <a href="/method/<%= detail.method.slug %>/stappenplan">
                 <li>
                     <h2>Stappenplan</h2>
                 </li>
             </a>
             </a>
-            <a href="/method/<%= method.slug %>/voorbeelden">
+            <a href="/method/<%= detail.method.slug %>/voorbeelden">
                 <li>
                     <h2>Voorbeelden</h2>
                 </li>
@@ -31,7 +31,24 @@
     </nav>
     </main>
 
-        <form action="/form" method="post">
+    <section class="form">
+        <section class="comment">
+            <h2>Comment section</h2>
+            <% form.comments.forEach(comment=> { %>
+                <ul>
+                    <li>
+                        <h3>
+                            <b>
+                                <%= comment.author %>
+                            </b>
+                            <%= comment.text %>
+                        </h3>
+                    </li>
+                </ul>
+                <% }) %>
+        </section>
+
+        <form action="/method/:slug/form" method="post">
             <% if(locals.error !==undefined){ %>
                 <p class="message">
                     <%= error %>
@@ -48,7 +65,7 @@
                         <input required type="text" name="text" id="text" placeholder="..." />
 
                         <label for="methodId"></label>
-                        <input type="hidden" name="methodId" id="methodId" value="<%= method.id %>" />
+                        <input type="hidden" name="methodId" id="methodId" value="<%= detail.method.id %>" />
 
                         <input class="submit-button" type="submit" value="Verzend" />
                     </fieldset>

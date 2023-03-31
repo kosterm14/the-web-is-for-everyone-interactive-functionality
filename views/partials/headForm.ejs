@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server side rendering</title>
+  <link rel="stylesheet" href="\styles\style.css">
+
+  <link rel="stylesheet" href="https://use.typekit.net/brx3lyu.css" />
+  <!-- rigid square font -->
+  <link rel="stylesheet" href="https://use.typekit.net/kdb0mcl.css" />
+  <!-- yrsa font -->
+
+  <script src="/scripts/script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <section>
+      <a href="/">
+        <img class="logo" src="/assets/logo.svg" alt="">
+      </a>
+    </section>
+
+    <section class="navheader">
+      <nav>
+        <ul>
+          <li>
+            Over
+          </li>
+          <li>
+            Blog
+          </li>
+          <li>
+            <img src="/assets/account.svg" alt="">
+          </li>
+        </ul>
+      </nav>
+    </section>
+  </header>
+
+  <section>
+    <a href="/">
+      <p class="line">
+        <img class="arrows" src="/assets/buttonL.png" alt="">
+        Overzicht <strong>tekenmethodes</strong>
+      </p>
+    </a>
+  </section>
+
+  <main>
+    <section class="navmain">
+      <section>
+        <h1>
+          <%= detail.method.title %>
+        </h1>
+      </section>

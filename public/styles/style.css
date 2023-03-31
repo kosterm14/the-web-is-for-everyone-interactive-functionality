@@ -313,7 +313,7 @@ a {
 
 form {
     padding: 3rem 1rem;
-
+    width: 50%;
     display: flex;
     justify-content: center;
 }
@@ -357,7 +357,7 @@ input {
 
 fieldset {
     border-style: none;
-    width: 60%;
+    width: 70%;
 }
 
 .hexagons {

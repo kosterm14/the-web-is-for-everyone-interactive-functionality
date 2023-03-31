@@ -59,21 +59,21 @@ server.get("/method/:slug/voorbeelden", (request, response) => {
 
 // Maak een route voor de index
 server.get('/method/:slug/form', (request, response) => {
-    const url = "https://api.visualthinking.fdnd.nl/api/v1/comments?id=clbm2lst10kxy0aw1lnu15898&first=1000"
-    const url2 = "https://api.visualthinking.fdnd.nl/api/v1/"
 
-    let detailPageUrl = url2 + "method/" + request.params.slug;
+    const baseurl = "https://api.visualthinking.fdnd.nl/api/v1/"
+    const commentUrl = `${baseurl}comments` + "?id=" + request.query.id
 
-    // fetchJson(url).then((data) => {
-    //     response.render('form', data)
-    // })
+    let detailPageUrl = baseurl + "method/" + request.params.slug;
 
     fetchJson(detailPageUrl).then((data) => {
-        response.render('form', data)
+        fetchJson(commentUrl).then((data2) => {
+            const newdata = { detail: data, form: data2 }
+            response.render('form', newdata)
+        })
     })
 })
 
-server.post('/form', (request, response) => {
+server.post('/method/:slug/form', (request, response) => {
 
     const baseurl = "https://api.visualthinking.fdnd.nl/api/v1/"
     const url = `${baseurl}comments`
@@ -131,20 +131,3 @@ export async function postJson(url, body) {
         .then((response) => response.json())
         .catch((error) => error)
 }
-
-/* <section class="form">
-        <section class="comment">
-            <h2>Comment section</h2>
-            <% comments.forEach(comment=> { %>
-                <ul>
-                    <li>
-                        <h3>
-                            <b>
-                                <%= comment.author %>
-                            </b>
-                            <%= comment.text %>
-                        </h3>
-                    </li>
-                </ul>
-                <% }) %>
-        </section> */
