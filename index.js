@@ -67,7 +67,7 @@ server.get('/method/:slug/form', (request, response) => {
 
     fetchJson(detailPageUrl).then((data) => {
         fetchJson(commentUrl).then((data2) => {
-            const newdata = { detail: data, form: data2 }
+            const newdata = { detail: data, form: data2, slug: request.params.slug }
             response.render('form', newdata)
         })
     })
@@ -82,7 +82,7 @@ server.post('/method/:slug/form', (request, response) => {
         let newComment = { ...request.body }
 
         if (data.success) {
-            response.redirect('/?memberPosted=true')
+            response.redirect("/method/" + request.params.slug + "/form?id=" + request.body.methodId)
             // TODO: squad meegeven, message meegeven
             // TODO: Toast meegeven aan de homepagina
         } else {

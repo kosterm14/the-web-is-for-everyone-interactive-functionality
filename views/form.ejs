@@ -48,7 +48,7 @@
                 <% }) %>
         </section>
 
-        <form action="/method/:slug/form" method="post">
+        <form action="/method/<%= detail.method.slug %>/form" method="post">
             <% if(locals.error !==undefined){ %>
                 <p class="message">
                     <%= error %>
