@@ -617,7 +617,7 @@ fieldset {
     flex-wrap: wrap;
     justify-content: center;
 
-    margin-top: 1.5rem;
+    /* margin-top: 1.5rem; */
 }
 
 .methods ul,
@@ -673,7 +673,7 @@ fieldset {
     margin-bottom: 1rem;
 }
 
-/* .categories {
+.categories {
     display: grid;
     grid:
         ". category ." 1fr / 0.5fr 4fr 1fr;
@@ -708,4 +708,4 @@ fieldset {
     font-weight: bold;
     margin-bottom: 1rem;
     margin-left: 0.5rem;
-} */
+}
