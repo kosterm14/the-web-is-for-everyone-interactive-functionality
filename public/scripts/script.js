@@ -38,6 +38,7 @@ function search() {
     filter = input.value.toUpperCase();
     ul = document.getElementById("methodList");
     li = ul.getElementsByTagName('li');
+    cat = document.getElementById('categories');
 
     // Loop through all list items, and hide those who don't match the search query
     for (i = 0; i < li.length; i++) {
@@ -45,8 +46,10 @@ function search() {
         txtValue = a.textContent || a.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = "";
+            cat.style.display = "";
         } else {
             li[i].style.display = "none";
+            cat.style.display = "none";
         }
     }
 }
