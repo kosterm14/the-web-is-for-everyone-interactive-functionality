@@ -16,6 +16,7 @@ html {
     --yellow: #feb51e;
     --orange: #fe6f07;
     --white: #ffffff;
+    --gray: #e8e8e8;
 }
 
 h1 {
@@ -326,13 +327,12 @@ form {
 
 label,
 input {
-    width: -webkit-fill-available;
+    width: 100%
 }
 
 label {
     font-size: 1rem;
     font-family: var(--yrsa);
-    margin-bottom: 0.5rem;
 }
 
 legend {
@@ -346,7 +346,7 @@ input {
     font-size: 1.5em;
     background-color: #e8e8e8;
     border: 0.05rem solid #fafafa;
-    margin-bottom: 1rem;
+    font-family: var(--rigid);
 }
 
 .submit-button {
@@ -455,7 +455,7 @@ fieldset {
     }
 }
 
-ul {
+.comment ul {
     list-style: none;
 }
 
@@ -612,16 +612,12 @@ ul {
     width: 80%
 }
 
-.placeholder {
-    width: 40%;
-}
-
 .methods {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
-    padding-left: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .methods ul,
@@ -658,5 +654,58 @@ ul {
 }
 
 .searchbar {
+    font-family: var(--rigid);
     padding-left: 7rem;
+
+    box-shadow: var(--bluelight) 5px 5px;
 }
+
+.searchbar:focus {
+    box-shadow: var(--yellow) 5px 5px;
+}
+
+::placeholder {
+    font-family: var(--rigid);
+}
+
+#author,
+#text {
+    margin-bottom: 1rem;
+}
+
+/* .categories {
+    display: grid;
+    grid:
+        ". category ." 1fr / 0.5fr 4fr 1fr;
+
+    margin-top: 2rem;
+}
+
+.categories-container {
+    grid-area: category;
+}
+
+.categorie-names li {
+    display: flex;
+    align-items: center;
+    padding-bottom: 30px;
+    list-style: none;
+    width: 360px;
+}
+
+.categorie-names {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.categorie-middle {
+    margin-right: 1rem;
+    margin-left: -1.5rem;
+}
+
+.categorieën {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+} */

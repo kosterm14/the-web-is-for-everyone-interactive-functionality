@@ -6,26 +6,70 @@
             <input class="searchbar" type="text" id="searchInput" onkeyup="search()" placeholder="Zoek een methode...">
         </nav>
 
+        <!-- <section class="categories">
+            <section class="categories-container">
+                <h2 class="categorieën">Categorieën</h2>
+
+                <ul class="categorie-names">
+                    <li>
+                        <img src="/assets/onderzoeken-en-begrijpen.svg" alt="">
+                        <h2>
+                            Onderzoeken en begrijpen
+                        </h2>
+                    </li>
+
+                    <li class="categorie-middle">
+                        <img src="/assets/leren-over-jezelf.svg" alt="">
+                        <h2>
+                            Leren over jezelf en reflecteren
+                        </h2>
+                    </li>
+
+                    <li>
+                        <img src="/assets/creatief.svg" alt="">
+                        <h2>
+                            Creatief denken
+                        </h2>
+                    </li>
+
+                    <li>
+                        <img src="/assets/organiseren-en-plannen.svg" alt="">
+                        <h2>
+                            Organiseren en plannen
+                        </h2>
+                    </li>
+
+                    <li class="categorie-middle">
+                        <img src="/assets/communiceren.svg" alt="">
+                        <h2>
+                            Communiceren en presenteren
+                        </h2>
+                    </li>
+
+                    <li>
+                        <img src="/assets/leren-over-anderen.svg" alt="">
+                        <h2>
+                            Leren over anderen
+                        </h2>
+                    </li>
+                </ul>
+            </section>
+        </section> -->
+
         <section class="methods">
             <ul id="methodList">
                 <% methods.forEach(method=> { %>
                     <li>
                         <section class="method">
                             <a href="/method/<%= method.slug %>/template">
-                                <% if (method.template) { %>
-                                    <img class="method-img" src="<%= method.template.url %>" alt="">
-                                    <% } else { %>
-                                        <img class="placeholder" src="/assets/sad.jpg" alt="">
-                                        <% } %>
-                                            <% if (method.template) { %>
-                                                <h2>
-                                                    <%= method.title %>
-                                                </h2>
-                                                <% } else { %>
-                                                    <h2>
-                                                        <%= method.title %>/werkt niet:(
-                                                    </h2>
-                                                    <% } %>
+                                <img class="method-img" src="<%= method.template?.url %>"
+                                    onerror="this.src='assets/placeholder.png'" alt="">
+
+                                <h2>
+                                    <strong>
+                                        <%= method.title %>
+                                    </strong>
+                                </h2>
                             </a>
                         </section>
                     </li>
