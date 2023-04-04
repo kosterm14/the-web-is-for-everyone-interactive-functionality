@@ -83,10 +83,7 @@ server.post('/method/:slug/form', (request, response) => {
 
         if (data.success) {
             response.redirect("/method/" + request.params.slug + "/form?id=" + request.body.methodId)
-            // TODO: squad meegeven, message meegeven
-            // TODO: Toast meegeven aan de homepagina
         } else {
-            // response.redirect('/new/?memberPosted=false')
             const errormessage = `${data.message}: Werkt niet:(`
             const newdata = { error: errormessage, values: newComment }
 
