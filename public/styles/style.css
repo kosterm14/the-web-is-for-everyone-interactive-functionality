@@ -476,6 +476,15 @@ fieldset {
         width: 100% !important;
     }
 
+    .categorie-middle {
+        margin-right: 0rem !important;
+        margin-left: 0rem !important;
+    }
+
+    .categories {
+        margin-left: 1rem !important;
+    }
+
     /* header */
     .logo {
         padding-left: 1rem;
@@ -709,4 +718,25 @@ fieldset {
     font-weight: bold;
     margin-bottom: 1rem;
     margin-left: 0.5rem;
+}
+
+button {
+    border: none;
+    background-color: var(--white);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    rotate: 90deg;
+    width: 7%;
+    margin-bottom: 1rem;
+    transition: 0.5s;
+}
+
+.rotate {
+    rotate: 270deg;
+    transition: 0.5s;
 }
