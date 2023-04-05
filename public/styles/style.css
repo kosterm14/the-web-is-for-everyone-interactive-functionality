@@ -94,6 +94,10 @@ a {
     font-weight: bolder;
 }
 
+.navmain li:hover {
+    color: var(--blue);
+}
+
 .navheader li {
     padding: 1.4rem;
 }
@@ -119,6 +123,11 @@ a {
     padding-left: 7rem;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
+}
+
+.line:hover {
+    color: var(--yellow);
+    transform: scale(1.01);
 }
 
 .navmain {
@@ -283,7 +292,7 @@ a {
     list-style: none;
     position: relative;
     height: 100%;
-    transition: transform 250ms ease-in;
+    transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .carousel-slide {
@@ -300,12 +309,20 @@ a {
 .carousel-button-right {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    /* transform: translateY(-50%); */
     background: var(--orange);
     border: 0;
     cursor: pointer;
     z-index: 1;
     padding: 0.5rem;
+}
+
+.carousel-button-left:active,
+.carousel-button-right:active {
+    animation-name: big;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
 }
 
 .carousel-button-right {
@@ -329,6 +346,10 @@ form {
 label,
 input {
     width: 100%
+}
+
+form .submit-button:hover {
+    background-color: var(--blue);
 }
 
 label {
@@ -647,11 +668,24 @@ fieldset {
     border: solid 5px var(--blue);
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
     box-shadow: var(--bluelight) 5px 10px;
+
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-duration: var(--animate-duration);
+    animation-duration: var(--animate-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+    -webkit-animation-duration: .75s;
+    animation-duration: .75s;
+    -webkit-animation-duration: calc(var(--animate-duration)*0.75);
+    animation-duration: calc(var(--animate-duration)*0.75);
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
 }
 
 .method:hover {
     box-shadow: var(--yellow) 5px 10px;
-    transform: scale(1.05);
 }
 
 .methods a {
@@ -739,4 +773,25 @@ button {
 .rotate {
     rotate: 270deg;
     transition: 0.5s;
+}
+
+.logo:active,
+.navmain li:active,
+.method:active,
+.categorie-names li:active,
+button:active {
+    animation-name: big;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+.logo:hover,
+.navmain li:hover,
+.navheader li:hover,
+input:active,
+.method:hover,
+.categorie-names li:hover,
+button:hover {
+    transform: scale(1.05);
 }

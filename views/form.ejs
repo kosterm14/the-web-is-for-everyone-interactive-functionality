@@ -31,46 +31,49 @@
     </nav>
     </main>
 
-    <section class="form">
-        <section class="comment">
-            <h2>Comment section</h2>
-            <h3 class="message">Het kan 30 seconden duren voor je comment hier staat. <br> Pls druk maar 1x op verzenden.</h3>
-            <% form.comments.forEach(comment=> { %>
-                <ul>
-                    <li>
-                        <h3>
-                            <b>
-                                <%= comment.author %>
-                            </b>
-                            <%= comment.text %>
-                        </h3>
-                    </li>
-                </ul>
-                <% }) %>
+    <section class="animate__animated animate__backInLeft">
+        <section class="form">
+            <section class="comment">
+                <h2>Comment section</h2>
+                <h3 class="message">Het kan 30 seconden duren voor je comment hier staat. <br> Pls druk maar 1x op
+                    verzenden.</h3>
+                <% form.comments.forEach(comment=> { %>
+                    <ul>
+                        <li>
+                            <h3>
+                                <b>
+                                    <%= comment.author %>
+                                </b>
+                                <%= comment.text %>
+                            </h3>
+                        </li>
+                    </ul>
+                    <% }) %>
+            </section>
+
+            <form action="/method/<%= detail.method.slug %>/form" method="post">
+                <% if(locals.error !==undefined){ %>
+                    <p class="message">
+                        <%= error %>
+                    </p>
+                    <% } %>
+
+                        <fieldset>
+                            <legend><span></span>Comments hier pls:)</legend>
+
+                            <label for="author">Naam</label>
+                            <input required type="text" name="author" id="author" placeholder="..." />
+
+                            <label for="text">Jouw comment</label>
+                            <input required type="text" name="text" id="text" placeholder="..." />
+
+                            <label for="methodId"></label>
+                            <input type="hidden" name="methodId" id="methodId" value="<%= detail.method.id %>" />
+
+                            <input class="submit-button" type="submit" value="Verzend" />
+                        </fieldset>
+            </form>
         </section>
-
-        <form action="/method/<%= detail.method.slug %>/form" method="post">
-            <% if(locals.error !==undefined){ %>
-                <p class="message">
-                    <%= error %>
-                </p>
-                <% } %>
-
-                    <fieldset>
-                        <legend><span></span>Comments hier pls:)</legend>
-
-                        <label for="author">Naam</label>
-                        <input required type="text" name="author" id="author" placeholder="..." />
-
-                        <label for="text">Jouw comment</label>
-                        <input required type="text" name="text" id="text" placeholder="..." />
-
-                        <label for="methodId"></label>
-                        <input type="hidden" name="methodId" id="methodId" value="<%= detail.method.id %>" />
-
-                        <input class="submit-button" type="submit" value="Verzend" />
-                    </fieldset>
-        </form>
     </section>
     </body>
 
