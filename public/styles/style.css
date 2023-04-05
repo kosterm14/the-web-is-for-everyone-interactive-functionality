@@ -790,6 +790,7 @@ button:active {
 .navmain li:hover,
 .navheader li:hover,
 input:active,
+form input:hover,
 .method:hover,
 .categorie-names li:hover,
 button:hover {
