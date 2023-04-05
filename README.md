@@ -28,6 +28,9 @@
 
 
 ## Bronnen
+https://barba.js.org/
+https://swup.js.org/
+https://animate.style/
 
 ## Licentie
 
