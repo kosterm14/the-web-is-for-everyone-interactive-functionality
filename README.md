@@ -1,36 +1,49 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
+# Overzichtspagina + Detailpagina's Visual Thinking
+<img src= "https://user-images.githubusercontent.com/61830362/230781421-d30652ee-4e9b-4a29-a982-05101bf902b5.png" width=400px>
+<img src= "https://user-images.githubusercontent.com/61830362/230781432-3a8a6cc0-9c14-4250-a348-3be1b1e2a852.png" width=400px>
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
 
 ## Inhoudsopgave
 
   * [Beschrijving](#beschrijving)
-  * [Gebruik](#gebruik)
   * [Kenmerken](#kenmerken)
   * [Installatie](#installatie)
+  * [Gebruik](#gebruik)
   * [Bronnen](#bronnen)
   * [Licentie](#licentie)
 
 ## Beschrijving
-<!-- In de Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
 
-## Gebruik
-<!--Bij Gebruik staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
+De opdracht was het ontwerpen en maken van een interactieve toepassing voor een opdrachtgever die voor iedereen toegankelijk is.
+
+De Visual thinking user story die ik heb uitgewerkt was: 
+
+> Als docent wil ik een reactie kunnen schrijven op een werkvorm zodat ik zelf kan aangeven wat ik de toegevoegde waarde vind van een werkvorm
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
+<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
+De pagina is gemaakt met een API database. Om met die database een werkende website te maken heb ik met node en express gewerkt.
+
+Gebruikte talen: 
+- HTML
+- EJS
+- JS
+- CSS
 
 ## Installatie
-<!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+Npm install + npm install express.
 
+## Gebruik
+Open in visual studio de terminal met de toetscombinatie
+
+![image](https://user-images.githubusercontent.com/61830362/225873302-20945f18-88e9-4598-a579-a88c37732492.png)
+
+Type "npm start" om de localhost:8000 link te krijgen om je website te bekijken.
 
 ## Bronnen
-https://barba.js.org/
-https://swup.js.org/
-https://animate.style/
+* https://barba.js.org/
+* https://swup.js.org/
+* https://animate.style/
 
 ## Licentie
 
